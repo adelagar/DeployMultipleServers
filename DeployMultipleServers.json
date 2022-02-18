@@ -550,7 +550,7 @@
                         "properties": {
                             "privateIPAllocationMethod": "Dynamic",
                             "subnet": {
-                               // "id": "[resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('virtualNetworkName'), parameters('SubnetName'))]"
+                               
                               "id": "[variables('ServerSubnetRef')]"
                             }
                         }
