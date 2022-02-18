@@ -3,6 +3,7 @@
 ### The solution is intended for deploying either production or development workloads in Azure Commercial and Azure Government.
 ### Please note that at the end of the server name I am appending a "-" and an ordinal number. Example Server-01, Server-02, etc.
 ### We are adding an optional route table, network security group, and availability set for the virtual machines that are being deployed. 
+### We are providing all of the server sku's available. Please vaidate before using this solution accelerator that the region you are planning on deploying has that sku. 
 ### Feel free to use, edit, and add functionality as you see fit. Solution is being provided "as is" for the greater technical community. 
 ### Use the solution with Azure portal custome template deployment feature.
 ### Pleae enjoy and would love to hear feedback to improve the solution! 
