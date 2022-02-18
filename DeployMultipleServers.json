@@ -416,7 +416,7 @@
         },
         "VMName": {
             "type": "string",
-            "defaultValue": "IRAD-DEV",
+            "defaultValue": "SERVER",
             "metadata": {
                 "description": "Basic name pattern of vm not more than 15 characters we are appending the numerical number at end of the vm"
             }
