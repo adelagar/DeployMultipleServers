@@ -1,5 +1,5 @@
 # Deploy Multiple Servers on Azure
-### Deploy multiple servers within an existing Azure virtual network. Windows 2019/2016/2021R2/Ubuntu 18.04.
+### Deploy multiple servers within an existing Azure virtual network. Windows 2019/2016/2012R2/Ubuntu 18.04.
 ### The solution is intended for deploying either production or development workloads in Azure Commercial and Azure Government.
 ### Please note that at the end of the server name I am appending a "-" and an ordinal number. Example Server-01, Server-02, etc.
 ### We are adding an optional route table, network security group, and availability set for the virtual machines that are being deployed. 
