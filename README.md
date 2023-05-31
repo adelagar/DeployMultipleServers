@@ -8,4 +8,4 @@
 ### We are providing the most popular server SKU's available. Please vaidate before using this solution accelerator that the region you are planning on deploying has the virtual machine SKU. 
 ### Feel free to use this solution, edit, and add functionality as you see fit. This solution is being provided "as is" for the greater technical community with no guarantees. 
 ### Use the solution with the Azure portal Custom Template Deployment feature or most common pipeline tools.
-### Pleae enjoy and would love to hear feedback to improve the solution! 
+### Please enjoy and would love to hear feedback to improve the solution! 
