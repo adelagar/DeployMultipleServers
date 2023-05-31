@@ -1,4 +1,5 @@
 # Deploy Multiple Servers on Azure
+
 ### Deploy multiple servers within an existing Azure virtual network. Deploy Generation 1 or 2 virtual machines on selected SKU's. Solution options available are Windows Server 2022 Datacenter/2019 Datacenter/2016 Datacenter/2012 R2/Ubuntu 22.04-LTS/ Ubuntu 20.04-LTS/CentOS 7.9.
 ### Ubuntu 18.04-LTS has been removed since the OS has reached end of life by the vendor.
 ### The solution is intended for deploying either production or development workloads in Azure Commercial and Azure Government.
@@ -11,6 +12,8 @@
 ### Please enjoy and would love to hear feedback to improve the solution! 
 
 # Deployment Solution Below
+
+### The following template deploys Azure virtual machines on an existing virtual network. The following prerequisite are required; the name of the Azure Resource Group that has the virtual network, the name of the virtual network, and the name of the subnet. 
 
 #### Microsoft Azure Commercial Click Here: ####
 [![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fadelagar%2FDeployMultipleServers%2Fmain%2Fazuredeploy.json)
