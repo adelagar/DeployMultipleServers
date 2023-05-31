@@ -1,10 +1,10 @@
 # Deploy Multiple Servers on Azure
-### Deploy multiple servers within an existing Azure virtual network. Windows 2019/2016/2012R2/Ubuntu 18.04/CentOS 7.9.
+### Deploy multiple servers within an existing Azure virtual network. Deploy Generation 1 or 2 virtual machines on selected SKU's. Solution options available are Windows Server 2022 Datacenter/2019 Datacenter/2016 Datacenter/2012 R2/Ubuntu 22.04/ Ubuntu 20.04/CentOS 7.9.
 ### The solution is intended for deploying either production or development workloads in Azure Commercial and Azure Government.
-### Please note that at the end of the server name I am appending a "-" and the next ordinal number. Example Server-1, Server-2, etc.
-### We are adding a route table, network security group, and availability set for the virtual machines that are being deployed. Please configure as you see fit. 
-### You will also have the ability to choose a data disk of various sizes and up to 32 disks.
-### We are providing all of the server sku's available. Please vaidate before using this solution accelerator that the region you are planning on deploying has that sku. 
-### Feel free to use, edit, and add functionality as you see fit. Solution is being provided "as is" for the greater technical community. 
-### Use the solution with the Azure portal Custom Template Deployment feature.
+### Please note that at the end of the virtual machine name I am appending a "-" and the next ordinal number. Example Server-1, Server-2, etc.
+### We are adding a route table, network security group, and availability set for the virtual machines that are being deployed. Please configure these objects as you see fit and associate with either the virtual network or virtual machine. 
+### You will also have the ability to choose a data disk of various sizes starting from 4 Gib to 1024 Gib with a total of 32 disks.
+### We are providing the most popular server SKU's available. Please vaidate before using this solution accelerator that the region you are planning on deploying has the virtual machine SKU. 
+### Feel free to use this solution, edit, and add functionality as you see fit. This solution is being provided "as is" for the greater technical community with no guarantees. 
+### Use the solution with the Azure portal Custom Template Deployment feature or most common pipeline tools.
 ### Pleae enjoy and would love to hear feedback to improve the solution! 
