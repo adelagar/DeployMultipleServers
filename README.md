@@ -1,5 +1,5 @@
 # Deploy Multiple Servers on Azure
-### Deploy multiple servers within an existing Azure virtual network. Deploy Generation 1 or 2 virtual machines on selected SKU's. Solution options available are Windows Server 2022 Datacenter/2019 Datacenter/2016 Datacenter/2012 R2/Ubuntu 22.04/ Ubuntu 20.04/CentOS 7.9.
+### Deploy multiple servers within an existing Azure virtual network. Deploy Generation 1 or 2 virtual machines on selected SKU's. Solution options available are Windows Server 2022 Datacenter/2019 Datacenter/2016 Datacenter/2012 R2/Ubuntu 22.04-LTS/ Ubuntu 20.04-LTS/CentOS 7.9.
 ### Ubuntu 18.04-LTS has been removed since the OS has reached end of life by the vendor.
 ### The solution is intended for deploying either production or development workloads in Azure Commercial and Azure Government.
 ### Please note that at the end of the virtual machine name I am appending a "-" and the next ordinal number. Example Server-1, Server-2, etc.
