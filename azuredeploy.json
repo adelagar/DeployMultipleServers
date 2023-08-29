@@ -1,6 +1,6 @@
 {
     "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
-    "contentVersion": "9.6.0.0",
+    "contentVersion": "9.7.0.0",
     "parameters": {
 
         "virtualNetworkName": {
@@ -57,7 +57,11 @@
                 "2022-Datacenter-Azure-Edition",
                 "20.04-LTS-Gen2",
                 "22.04-LTS-Gen2",
-                "CentOS-7.9-Gen2"
+                "Debian 11 Bullseye-Gen2",
+                "Debian 12 Bookworm-Gen2",
+                "CentOS-7.9-Gen2",
+                "Redhat Enterprise Linux 7.8 - x64 gen 1",
+                "Redhat Enterprise Linux 8.1 - gen 1"
 
             ],
             "metadata": {
@@ -414,7 +418,7 @@
             "type": "string",
             "defaultValue": "VMSERV",
             "metadata": {
-                "description": "Basic name pattern of vm not more than 15 characters we are appending the numerical number at end of the vm"
+                "description": "Basic Name Pattern of VM Not More than 15 Characters we are appending the Ordinal Number at end of the name"
             }
         },
         "diskSizeGB": {
@@ -440,14 +444,14 @@
             "maxValue": 32,
             "defaultValue": 1,
             "metadata": {
-                "description": "The number of data disks to be deployed with the server. The max is 32."
+                "description": "The Number of Data Disks to be Deployed with the Server. The Max is 32."
             }
         },
         "VMInstances": {
             "type": "int",
             "defaultValue": "2",
             "metadata": {
-                "description": "Number of Migration Computers Needed"
+                "description": "Number of Computers Needed"
             }
         },
         "availabilitySetName": {
@@ -536,11 +540,33 @@
                 "publisher": "Canonical"
 
             },
+            "Debian 11 Bullseye-Gen2": {
+                "sku": "11-gen2",
+                "offer": "debian-11",
+                "publisher": "debian"
+
+            },
+            "Debian 12 Bookworm-Gen2": {
+                "sku": "12-gen2",
+                "offer": "debian-12",
+                "publisher": "debian"
+
+            },
             "CentOS-7.9-Gen2": {
                 "sku": "7_9-gen2",
                 "offer": "CentOS",
                 "publisher": "OpenLogic"
 
+            },
+            "Redhat Enterprise Linux 7.8 - x64 gen 1": {
+                "sku":"7.8",
+                "offer":"RHEL",
+                "publisher": "RedHat"
+            },
+            "Redhat Enterprise Linux 8.1 - gen 1": {
+                "sku":"8.1",
+                "offer":"RHEL",
+                "publisher": "RedHat"
             }
         }
     },
