@@ -13,7 +13,7 @@
 
 # Deployment Solution Below
 
-### The following template deploys Azure virtual machines on an existing virtual network. The following prerequisite are required; the name of the virtual network Azure resource group, the name of the virtual network, and the name of the intended subnet. 
+### The following template deploys Azure virtual machines on an existing virtual network. The following prerequisite are required; an Azure subscription, the name of the Azure resource group that the intended virtual network resides, the name of the virtual network, and the name of the target subnet. The person deploying this solution should have the proper administrative rights within the Azure subscription for the deployment to succeed.
 
 #### Microsoft Azure Commercial Click Here: ####
 [![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fadelagar%2FDeployMultipleServers%2Fmain%2Fazuredeploy.json)
