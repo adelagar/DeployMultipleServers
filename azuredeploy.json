@@ -1,6 +1,6 @@
 {
     "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
-    "contentVersion": "9.7.0.0",
+    "contentVersion": "9.8.0.0",
     "parameters": {
 
         "virtualNetworkName": {
@@ -475,24 +475,46 @@
                 "description": "Name of the Network Secuity Group"
             }
         },
+        "AuthenticationType": {
+            "type": "string",
+            "defaultValue": "password",
+            "allowedValues": [
+                "sshPublicKey",
+                "password"
+            ],
+            "metadata": {
+                "description": "The type of authentication to use on the virtual machine. SSH key is recommended."
+            }
+        },
 
-        "Username": {
+        "LocalAdministratorPasswordOrKey": {
+            "type": "securestring",
+            "metadata": {
+                "description": "The SSH key or password for the virtual machine. SSH key is recommended."
+            }
+        },
+        "LocalAdministratorUsername": {
             "type": "string",
             "defaultValue": "xadmin",
             "metadata": {
-                "description": "Administrative Account"
-            }
-
-        },
-        "Password": {
-            "type": "securestring",
-            "metadata": {
-                "description": "Administrative Password"
+                "description": "The username for the local administrator account."
             }
         }
+
     },
     "functions": [],
     "variables": {
+        "linuxConfiguration": {
+            "disablePasswordAuthentication": true,
+            "ssh": {
+                "publicKeys": [
+                    {
+                        "path": "[format('/home/{0}/.ssh/authorized_keys', parameters('LocalAdministratorUsername'))]",
+                        "keyData": "[parameters('LocalAdministratorPasswordOrKey')]"
+                    }
+                ]
+            }
+        },
         "VnetID": "[resourceId(parameters('vnetResourceGroupName'),concat('Microsoft.Network','/','virtualNetworks'),parameters('virtualNetworkName'))]",
         "ServerSubnetRef": "[concat(variables('VnetID'), '/subnets/', parameters('SubnetName'))]",
         "Images": {
@@ -559,15 +581,16 @@
 
             },
             "Redhat Enterprise Linux 7.8 - x64 gen 1": {
-                "sku":"7.8",
-                "offer":"RHEL",
+                "sku": "7.8",
+                "offer": "RHEL",
                 "publisher": "RedHat"
             },
             "Redhat Enterprise Linux 8.1 - gen 1": {
-                "sku":"8.1",
-                "offer":"RHEL",
+                "sku": "8.1",
+                "offer": "RHEL",
                 "publisher": "RedHat"
             }
+            
         }
     },
     "resources": [
@@ -697,8 +720,9 @@
                 },
                 "osProfile": {
                     "computerName": "[concat(parameters('VMName'),'-',copyIndex(1))]",
-                    "adminUsername": "[parameters('Username')]",
-                    "adminPassword": "[parameters('Password')]"
+                    "adminUsername": "[parameters('LocalAdministratorUsername')]",
+                    "adminPassword": "[parameters('LocalAdministratorPasswordOrKey')]",
+                    "linuxConfiguration": "[if(equals(parameters('AuthenticationType'), 'password'), null(), variables('linuxConfiguration'))]"
 
                 },
                 "storageProfile": {
