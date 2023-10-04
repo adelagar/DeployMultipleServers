@@ -12,7 +12,7 @@
 ### When leveraging this template to deploy a GitHub Enterprise Server please change the OS disk size to 200 from the default of 127. If you do not do this the deployment will fail based on the GitHub virtual machine image requirements. 
 
 ### We highly encourage you to please first visit the official GitHub documentation on how to deploy the system on Azure. The link can be found here [Installing GitHub Enterprise Server on Azure](https://docs.github.com/en/enterprise-server@3.6/admin/installation/setting-up-a-github-enterprise-server-instance/installing-github-enterprise-server-on-azure). 
-### Please pay special attention to the required data disk size in the article based on your organization size as well as the custom TCP ports that are also required within the NSG. We are not populating the NSG or assigning the NSG to the virtual machine avoid any potential conflicts with your current Azure Landing Zone (virtual networks) configuration.
+### Please pay special attention to the required data disk size in the article based on your organization size as well as the custom TCP ports that are also required within the NSG. We are not populating the NSG or assigning the NSG to the virtual machine avoiding any potential conflicts with your current Azure Landing Zone (virtual networks) configuration.
 
 ### We are providing the most popular server SKU's available. Please vaidate before using this solution accelerator that the region you are planning on deploying has the virtual machine SKU size. 
 ### Feel free to use this solution, edit, and add functionality as you see fit. This solution is being provided "as is" for the greater technical community with no guarantees. 
