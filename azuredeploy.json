@@ -1,6 +1,6 @@
 {
     "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
-    "contentVersion": "9.8.0.0",
+    "contentVersion": "9.9.0.0",
     "parameters": {
 
         "virtualNetworkName": {
@@ -45,6 +45,19 @@
                 "description": "Performance of OS Disk drive, Standard vs Premium"
             }
         },
+        "osDisksize": {
+            "type": "string",
+            "defaultValue":"127",
+            "allowedValues": [
+               "127",
+               "200" 
+
+            ],
+            "metadata": {
+                "description": "If you are deploying a vm leave the default of 127, unless you are deploying GitHub Enterprise Server select 200"
+            }
+
+        },
 
         "vmSKU": {
             "type": "string",
@@ -61,7 +74,8 @@
                 "Debian 12 Bookworm-Gen2",
                 "CentOS-7.9-Gen2",
                 "Redhat Enterprise Linux 7.8 - x64 gen 1",
-                "Redhat Enterprise Linux 8.1 - gen 1"
+                "Redhat Enterprise Linux 8.1 - gen 1",
+                "GitHub-Enterprise"
 
             ],
             "metadata": {
@@ -589,6 +603,11 @@
                 "sku": "8.1",
                 "offer": "RHEL",
                 "publisher": "RedHat"
+            },
+            "GitHub-Enterprise": {
+                "sku": "GitHub-Enterprise",
+                "offer": "GitHub-Enterprise",
+                "publisher": "GitHub"
             }
             
         }
@@ -736,7 +755,7 @@
                             "storageAccountType": "[parameters('osDiskPerformance')]"
 
                         },
-                        "diskSizeGB": 127
+                        "diskSizeGB": "[parameters('osDisksize')]"
 
                     },
                     "copy": [
