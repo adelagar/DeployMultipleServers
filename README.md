@@ -6,6 +6,14 @@
 ### Please note that at the end of the virtual machine name I am appending a "-" and the next ordinal number. Example Server-1, Server-2, etc. Hostnames should not exceed 15 characters.
 ### We are adding a route table, network security group, and availability set for the virtual machines that are being deployed. Please configure these objects as you see fit and associate with either the virtual network or virtual machine. You can also inherit both the existing route tables and network security groups that have already been preconfigured in your environment. The choice is yours.
 ### You will also have the ability to choose a data disk of various sizes with a total of 32 disks.
+
+# GitHub Enterprise Server
+
+### When leveraging this template and you are deploying the GitHub Enterprise Server please change the OS disk to 200 from thedefault of 127. If you do not do this the deployment will fail based on the GitHub virtual machine requirements. 
+
+### We highly encourage you to please first visit the official GitHub documentation on how to deploy the system on Azure. The link can be found here [Installing GitHub Enterprise Server on Azure(https://docs.github.com/en/enterprise-server@3.6/admin/installation/setting-up-a-github-enterprise-server-instance/installing-github-enterprise-server-on-azure). 
+### Please pay special attention to the required data disk size in the article based on your organization size as well as the custom TCP ports that are also required within the NSG. We are not populating the NSG or assigning the NSG to avoid any potential conflicts with your current Azure Landing Zone (virtual networks) configuration.
+
 ### We are providing the most popular server SKU's available. Please vaidate before using this solution accelerator that the region you are planning on deploying has the virtual machine SKU size. 
 ### Feel free to use this solution, edit, and add functionality as you see fit. This solution is being provided "as is" for the greater technical community with no guarantees. 
 ### Use the solution with the Azure portal Custom Template Deployment feature or most common pipeline tools.
