@@ -1,6 +1,6 @@
 # Deploy Multiple Servers on Azure
 
-### Deploy multiple servers within an existing Azure virtual network. Deploy Generation 1 or 2 virtual machines on selected SKU's. Solution options available are Windows Server 2022 Datacenter/Windows 2019 Datacenter/Windows 2016 Datacenter/Windows 2012 R2/Ubuntu 22.04-LTS/ Ubuntu 20.04-LTS/CentOS 7.9/Debian 11 /Debian 12/RedHat Enterprise Server 7.8/RedHat Enterprise Server 8.1/GitHub Enterprise Server. 
+### Deploy multiple servers within an existing Azure virtual network. Deploy Generation 1 or 2 virtual machines on selected SKU's. Solution options available are Windows Server 2022 Datacenter/Windows 2019 Datacenter/Windows 2016 Datacenter/Windows 2012 R2/Ubuntu 22.04-LTS/ Ubuntu 20.04-LTS/CentOS 7.9/Debian 11 /Debian 12/RedHat Enterprise Server 7.8/RedHat Enterprise Server 8/GitHub Enterprise Server. 
 ### Ubuntu 18.04-LTS has been removed since the OS has reached end of life by the vendor.
 ### The solution is intended for deploying either production or development workloads in Azure Commercial and Azure Government.
 ### Please note that at the end of the virtual machine name I am appending a "-" and the next ordinal number. Example Server-1, Server-2, etc. Hostnames should not exceed 15 characters.
@@ -9,7 +9,7 @@
 
 # GitHub Enterprise Server
 
-### When leveraging this template to deploy a GitHub Enterprise Server please change the OS disk size to 200 from the default of 127. If you do not do this the deployment will fail based on the GitHub virtual machine image requirements. 
+### When leveraging this template to deploy a GitHub Enterprise Server please change the OS disk size to 200 from the default of 127. If you do not do this the deployment will fail based on the GitHub virtual machine image requirements. Also select Linux as the OS forthe deployment to complete as expected.
 
 ### We highly encourage you to please first visit the official GitHub documentation on how to deploy the system on Azure. The link can be found here [Installing GitHub Enterprise Server on Azure](https://docs.github.com/en/enterprise-server@3.6/admin/installation/setting-up-a-github-enterprise-server-instance/installing-github-enterprise-server-on-azure). 
 ### Please pay special attention to the required data disk size in the article based on your organization size as well as the custom TCP ports that are also required within the NSG. We are not populating the NSG or assigning the NSG to the virtual machine avoiding any potential conflicts with your current Azure Landing Zone (virtual networks) configuration. Also please review the required size of the virtual machine in terms of Memory and virtual CPUs.
