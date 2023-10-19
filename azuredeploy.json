@@ -600,7 +600,7 @@
                 "publisher": "RedHat"
             },
             "Redhat Enterprise Linux 8.1 - gen 1": {
-                "sku": "8.1",
+                "sku": "8",
                 "offer": "RHEL",
                 "publisher": "RedHat"
             },
